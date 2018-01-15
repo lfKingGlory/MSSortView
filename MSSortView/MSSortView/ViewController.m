@@ -19,6 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    {
+//        //在创建webview之前就定义好全局的userAgent
+//        self.webView = [[UIWebView alloc] init];//新建webview是为了获取旧的userAgent
+//        NSString* secretAgent = [self.webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+//        NSLog(@"webView旧的userAgent：%@",secretAgent);
+//        
+//        NSRange range = [secretAgent rangeOfString:@"mjd_cridit_native"];
+//        if(range.length == 0){
+//            NSString *newUagent = [NSString stringWithFormat:@"%@ %@",secretAgent,@"mjd_cridit_native"];
+//            NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:newUagent, @"UserAgent",nil];
+//            [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+//        }
+//        self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+//        self.webView.scalesPageToFit = YES;
+//        [self.view addSubview:self.webView];
+//        secretAgent = [self.webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+//        NSLog(@"webView新的userAgent：%@",secretAgent);
+//    }
+    
     CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     NSInteger count = 7;
