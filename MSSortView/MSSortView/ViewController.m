@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) MSSortView *sView;
+@property (assign, nonatomic) BOOL isChange;
 @end
 
 @implementation ViewController
@@ -55,6 +56,22 @@
     self.sView.clickBlock = ^(MSView *view) {
         NSLog(@"tag===%d===row===%d===col===%d",(int)view.tag,(int)view.row,(int)view.col);
     };
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UIInterfaceOrientation status;
+    if (self.isChange) {
+        self.isChange = NO;
+        status = UIInterfaceOrientationPortrait;
+    } else {
+        self.isChange = YES;
+        status = UIInterfaceOrientationLandscapeRight;
+    }
+    [[UIApplication sharedApplication] setStatusBarOrientation:status animated:NO];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
 @end
