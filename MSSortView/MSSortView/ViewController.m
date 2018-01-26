@@ -67,7 +67,11 @@
         self.isChange = YES;
         status = UIInterfaceOrientationLandscapeRight;
     }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
     [[UIApplication sharedApplication] setStatusBarOrientation:status animated:NO];
+#pragma clang diagnostic pop
+    
 }
 
 - (BOOL)shouldAutorotate {
