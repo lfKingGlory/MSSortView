@@ -58,24 +58,24 @@
     };
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UIInterfaceOrientation status;
-    if (self.isChange) {
-        self.isChange = NO;
-        status = UIInterfaceOrientationPortrait;
-    } else {
-        self.isChange = YES;
-        status = UIInterfaceOrientationLandscapeRight;
-    }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-    [[UIApplication sharedApplication] setStatusBarOrientation:status animated:NO];
-#pragma clang diagnostic pop
-    
-}
-
-- (BOOL)shouldAutorotate {
-    return NO;
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    UIInterfaceOrientation status;
+//    if (self.isChange) {
+//        self.isChange = NO;
+//        status = UIInterfaceOrientationPortrait;
+//    } else {
+//        self.isChange = YES;
+//        status = UIInterfaceOrientationLandscapeRight;
+//    }
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+//    [[UIApplication sharedApplication] setStatusBarOrientation:status animated:NO];
+//#pragma clang diagnostic pop
+//    
+//}
+//
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
 
 @end
